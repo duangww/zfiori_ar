@@ -131,7 +131,7 @@ sap.ui.define(
           // 3. 插入小计行（增加一个标识位 isSummaryRow）
           aResult.push({
             group: sGroupName,
-            customer_name: "\u03A3企业所属集团小计",
+            customer_name: `\u03A3${sGroupName}小计`,
             receivable_amount: fGroupSubtotal.toFixed(2),
             isSummaryRow: true,
           });
