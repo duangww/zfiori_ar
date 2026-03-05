@@ -12,39 +12,39 @@
         <pages>
             <Page id="page" title="{i18n>title}">
                 <content>
-                    <f:SimpleForm
-                        editable="true"
-                        layout="ResponsiveGridLayout"
-                        labelSpanL="2"
-                        labelSpanM="3"
-                        columnsL="1"
-                        adjustLabelSpan="false">
-                        <f:content>
-                            <Label text="公司代码" labelFor="companyCodeInput" />
-                            <Input id="companyCodeInput" width="200px" />
-                            <Label text="企业所属集团" labelFor="groupInput" />
-                            <Input id="groupInput" width="200px" />
-                            <Label text="客户编码" required="true" />
-                            <Input id="customerInput"
-                                placeholder="输入客户编码或名称..."
-                                showSuggestion="true"
-                                width="200px"
-                                liveChange=".onLiveChange"
-                                suggestionItems="{customerModel>/data}">
-                                <suggestionItems>
-                                    <core:ListItem key="{customerModel>customer_id}"
-                                        text="{customerModel>customer_id}"
-                                        additionalText="{customerModel>customer_name}" />
-                                </suggestionItems>
-                            </Input>
-
-                            <Label text="" />
+                    <VBox class="sapUiSmallMargin">
+                        <FlexBox alignItems="Start" justifyContent="Start" wrap="Wrap">
+                            <VBox class="sapUiMediumMarginEnd sapUiSmallMarginBottom">
+                                <Label text="公司代码" labelFor="companyCodeInput" />
+                                <Input id="companyCodeInput" width="200px" />
+                            </VBox>
+                            <VBox class="sapUiMediumMarginEnd sapUiSmallMarginBottom">
+                                <Label text="企业所属集团" labelFor="groupInput" />
+                                <Input id="groupInput" width="200px" />
+                            </VBox>
+                            <VBox class="sapUiMediumMarginEnd sapUiSmallMarginBottom">
+                                <Label text="客户编码" required="true" />
+                                <Input id="customerInput"
+                                    width="200px"
+                                    placeholder="输入客户编码或名称..."
+                                    showSuggestion="true"
+                                    liveChange=".onLiveChange"
+                                    suggestionItems="{customerModel>/data}">
+                                    <suggestionItems>
+                                        <core:ListItem key="{customerModel>customer_id}"
+                                            text="{customerModel>customer_id}"
+                                            additionalText="{customerModel>customer_name}" />
+                                    </suggestionItems>
+                                </Input>
+                            </VBox>
+                        </FlexBox>
+                        <HBox class="sapUiSmallMarginTop">
                             <Button text="查询"
                                 type="Emphasized"
                                 press=".onSearch"
                                 width="100px" />
-                        </f:content>
-                    </f:SimpleForm>
+                        </HBox>
+                    </VBox>
                     <Table id="customerTable" items="{ar>/data}">
                         <columns>
                             <Column>
