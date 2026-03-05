@@ -56,13 +56,19 @@
                             <Column>
                                 <Text text="企业所属集团" />
                             </Column>
-                            <Column>
+                            <Column
+                                minScreenWidth="Small"
+                                demandPopin="true">
                                 <Text text="客户编码" />
                             </Column>
-                            <Column>
+                            <Column
+                                minScreenWidth="Small"
+                                demandPopin="true">
                                 <Text text="客户名称" />
                             </Column>
-                            <Column>
+                            <Column
+                                minScreenWidth="Small"
+                                demandPopin="true">
                                 <Text text="应收账款" />
                             </Column>
                         </columns>
